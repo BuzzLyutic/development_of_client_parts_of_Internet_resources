@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"><!-- Кодировка символов страницы -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Login Page</title>
+   <link rel="stylesheet" href="login.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+  
+
+    <div id="products"></div>
+       <h2>Корзина</h2>
+       <div id="cart" style="padding-bottom: 20%; border: black 2px solid;">
+        
+        <!-- Cart items will be added here -->
+       </div>
+       <button style="margin-top: 2%;" onclick="clearCart()">Очистить корзину</button>
+       <div id="total">
+        <!-- Total value will be displayed here -->
+       </div>
+       <button style="margin-top: 2%;" onclick="products.sort((a, b) => a.price - b.price); displayItems();">Сортировка по возростанию цены</button>
+       <button style="margin-top: 2%;" onclick="products.sort((a, b) => b.price - a.price); displayItems();">Сортировка по убыванию цены</button>
+    <script src="shopping-cart.js"></script>
+
+   
+</body>
+</html>

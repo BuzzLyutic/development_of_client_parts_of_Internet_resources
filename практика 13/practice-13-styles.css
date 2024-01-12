@@ -1,0 +1,134 @@
+:root{
+    --color: #181818; 
+    }
+
+body{
+    background-color: black;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+
+#myBackground{
+  
+  width: 100%;
+  height: fit-content;
+}
+
+  .first {
+    
+    top: 10%;
+    text-align: center;
+    color: var(--color);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://wallpapers.com/images/hd/nascar-background-1293aj40f49tcha2.jpg);
+    background-size: cover;
+  }
+  
+  h1 {
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  
+  .first p{
+    max-width: 52ch;
+    line-height: 1.5;
+    padding: 1em;
+    color: white;
+    transition: 0.5s all;
+    font-size: 1.5em;
+  }
+  .second p{
+    max-width: 52ch;
+    line-height: 1.5;
+    padding: 1em;
+    color: white;
+    transition: 0.5s all;
+    font-size: 1em;
+  }
+  .card p{
+    color: black;
+    transition: 1s all;
+  }
+  
+  a {
+    display: inline-block;
+    padding: 1em 3.5em;
+    background-color: var(--color);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 0.3em;
+    font-weight: 700;
+    letter-spacing: .5px;
+    font-size: .875rem;
+  }
+  
+  .blank,
+  .other {
+    width: 100%;
+    min-height: 60vh;
+    background-color: var(--color);
+  }
+  
+
+  .second {
+    
+    display: flex;
+    flex-direction: row;
+    gap: 1.6em;
+    justify-content: space-around;
+    padding: 2%;
+    background-image: url(https://i.iheart.com/v3/re/new_assets/5c6d7a005c5a22fc5de3d44e); 
+    background-size: cover;
+  }
+  
+  h3 {
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-top: 1em;
+  }
+  
+  .card > a {
+    margin-bottom: 2em;
+  }
+  
+  .item {
+    display: flex;
+    max-width: 320px;
+    background-color: white;
+ 
+    flex-direction: column;
+    align-items: center;
+    border-radius: .5em;
+    -webkit-box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+    -moz-box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+    box-shadow: 0px 29px 38px -15px rgba(0,0,0,0.43);
+  }
+  
+  .img {
+    width: 90%;
+    height: 200px;
+    background-color: lightgrey;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    border-radius: .3em;;
+  }
+  
+  .img-first {
+    background-image: url(https://leonardo.osnova.io/4d198ddb-a5f0-58b0-9ab8-f6fe67c13f9f/-/resize/2368/-/format/webp/);
+  }
+  
+  .img-second {
+    background-image: url(https://leonardo.osnova.io/063bfae8-94a1-5bcd-ab0e-d506a0959693/-/resize/2364/-/format/webp/);
+  }
+  
+  .img-third {
+    background-image: url(https://leonardo.osnova.io/4e8db10a-d986-5966-8b23-6a74d2cbf3b3/-/resize/2006/-/format/webp/);
+  }
+  

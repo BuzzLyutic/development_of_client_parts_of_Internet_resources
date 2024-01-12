@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head><!-- collection of metadata -->
+  <meta charset="UTF-8"><!-- Кодировка символов страницы -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Практика 14</title><!-- заголовок -->
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+ </head>
+
+ <body>
+    <a href="#" id="contents"><i>abc</i>Перейти по ссылке</a>
+    <script src="scripts.js"></script>
+
+
+
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <!-- add as many list items as you need -->
+      </ul>
+      
+      <style>
+        .selected {
+          background-color: #b3d4fc; /* change this to the highlight color you prefer */
+        }
+      </style>
+
+      <script>
+                    // Get the list element
+            var listElement = document.getElementById('myList');
+
+            // Add a click event listener to the list element
+            listElement.addEventListener('click', function(event) {
+            // Check if the event target is a list item
+            if (event.target.tagName === 'LI') {
+                // If the Ctrl (or Cmd) key is not held down, remove the .selected class from all list items
+                if (!event.ctrlKey && !event.metaKey) {
+                var selectedItems = listElement.getElementsByClassName('selected');
+                while (selectedItems.length > 0) {
+                    selectedItems[0].classList.remove('selected');
+                }
+                }
+
+                // Toggle the .selected class on the clicked list item
+                event.target.classList.toggle('selected');
+            }
+            });
+
+            // Prevent browser-standard text highlighting when clicking
+            document.onselectstart = function() {
+            return false;
+            }
+      </script>
+
+
+<div id="sliderContainer">
+    <div id="sliderThumb"></div>
+  </div>
+  
+  <style>
+    #sliderContainer {
+      width: 500px; /* Adjust this to change the slider length */
+      height: 20px;
+      background-color: #ddd;
+      position: relative;
+    }
+  
+    #sliderThumb {
+      width: 20px; /* Adjust this to change the slider thumb size */
+      height: 30px;
+      background-color: rgb(0, 8, 168);
+      position: absolute;
+      top: -5px;
+      border-radius: 5px;
+    }
+  </style>
+
+  <script>
+            // Get the slider container and thumb elements
+        var sliderContainer = document.getElementById('sliderContainer');
+        var sliderThumb = document.getElementById('sliderThumb');
+
+        var sliderContainerRect = sliderContainer.getBoundingClientRect();
+        var sliderThumbRect = sliderThumb.getBoundingClientRect();
+
+        var isMouseDown = false;
+
+        // When the mouse button is pressed on the slider thumb, start moving the thumb
+        sliderThumb.addEventListener('mousedown', function() {
+        isMouseDown = true;
+        });
+
+        // When the mouse button is released, stop moving the thumb
+        document.addEventListener('mouseup', function() {
+        isMouseDown = false;
+        });
+
+        // When the mouse moves, move the thumb if the mouse button is pressed
+        document.addEventListener('mousemove', function(event) {
+        if (isMouseDown) {
+            var newThumbPosition = event.clientX - sliderContainerRect.left - sliderThumbRect.width / 2;
+            
+            // If the new thumb position is outside the slider container, adjust it to be within the container
+            if (newThumbPosition < 0) {
+            newThumbPosition = 0;
+            } else if (newThumbPosition > sliderContainerRect.width - sliderThumbRect.width) {
+            newThumbPosition = sliderContainerRect.width - sliderThumbRect.width;
+            }
+
+            // Move the thumb to the new position
+            sliderThumb.style.left = newThumbPosition + 'px';
+        }
+        });
+
+  </script>
+
+
+<div id="gallery">
+    <img id="mainImage" src="https://hips.hearstapps.com/hmg-prod/images/ryan-blaney-driver-of-the-menards-dutch-boy-ford-drives-news-photo-1701106049.jpg" alt="Main Image">
+    <div class="thumbnail">
+      <img  src="https://images.ctfassets.net/xd502h20t7lh/5ywx26YSSYyTL6SDDsii3V/0dbbee768b6e054821157c0b31dd8da2/Pits-EV-07-23-MH2_7955.jpg" alt="Thumbnail 1" >
+    </div>
+    <div class="thumbnail">
+      <img  src="https://cdn.williamsf1.tech/images/fnx611yr/production/782390c614508aee0df06834ade0191ec54cce33-4088x2298.jpg?rect=505,0,3064,2298&w=1200&h=900&auto=format" alt="Thumbnail 2" >
+    </div>
+    <div class="thumbnail">
+      <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpy2zQKodQlKffQSu1CNkrwSSxC5LkICbJ_w&usqp=CAU" alt="Thumbnail">
+    </div>
+    <div class="thumbnail">
+      <img  src="https://hips.hearstapps.com/hmg-prod/images/ryan-blaney-driver-of-the-menards-dutch-boy-ford-drives-news-photo-1701106049.jpg" alt="Thumbnail 2" >
+    </div>
+    <div class="thumbnail">
+      <img  src="https://images.unsplash.com/photo-1536909526839-8f10e29ba80c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFjaW5nfGVufDB8fDB8fHww" alt="Thumbnail 1" >
+    </div>
+      <!-- Add more thumbnails as needed -->
+    
+  </div>
+  <style>
+    #gallery{
+      display: grid;
+      grid-template-columns: repeat(5, 105px);
+      grid-template-rows: 300px 100px;
+      grid-template-areas: "main main main main main"
+      "thumb1 thumb2 thumb3 thumb4 thumb5";
+      gap: 5px;
+      padding: 10px;
+    }
+    #mainImage{
+      grid-area: main;
+      width: 540px;
+      height: 300px;
+    }
+    .gallery:nth-child(2){
+      grid-area: thumb1;
+  
+    }
+    .gallery:nth-child(3){
+      grid-area: thumb2;
+    
+    }
+    .gallery:nth-child(4){
+      grid-area: thumb3;
+   
+    }
+    .gallery:nth-child(5){
+      grid-area: thumb4;
+     
+    }
+    .gallery:nth-child(6){
+      grid-area: thumb5;
+      
+    }
+    .thumbnail img{
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  <script>
+         // Select all thumbnail images
+    var thumbnails = document.querySelectorAll(".thumbnail");
+
+    // Add a click event listener to each thumbnail image
+    for (var i = 0; i < thumbnails.length; i++) {
+      thumbnails[i].addEventListener("click", function(event) {
+        // Update the main image's source with the clicked thumbnail's source
+        document.getElementById("mainImage").src = event.target.src;
+      });
+    }
+
+
+  </script>
+  
+
+ <!--<div>
+    <img id="myImage" src="C:\Users\oniwi\OneDrive\Рабочий стол\РКЧиР\Детище\images\Ралли.jpg" style="position: relative; left: 0px;">
+  </div>
+
+  <script>
+           
+        // Move To Right Animation
+        function moveToRight(element, distance, time) {
+        var position = 0;
+        var timer = setInterval(function() {
+            if (position >= distance) {
+            clearInterval(timer);
+            }
+            element.style.left = position + 'px';
+            position += 10;
+        }, time / (distance / 10));
+        }
+
+        // Get the text and image elements
+    
+        var myImage = document.getElementById('myImage');
+
+        // Apply the animations
+        function animate(){
+          requestAnimationFrame(animate);
+          moveToRight(myImage, 500, 2000);
+        }
+        animate();
+
+  </script>
+  <canvas style="height: 300px; width: 1000px;"></canvas>
+  <script>
+
+    let canvas2 = document.querySelector('canvas');
+    let ctx = canvas2.getContext('2d');
+
+    let boxWidth = 50;
+    x = 0;
+    let speed = 2;
+    let direction = 1;
+
+    function drawBox() {
+        ctx.clearRect(0, 0, canvas2.width, canvas2.height);
+        ctx.fillRect(x, canvas2.height / 2 - boxWidth / 2, boxWidth, boxWidth);
+    }
+
+    function update() {
+        x += speed * direction;
+        if (x > canvas2.width - boxWidth) {
+            direction = -1;
+        } else if (x < 0) {
+            direction = 1;
+        }
+        drawBox();
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        update();
+    }
+    animate();
+    
+  </script>-->
+
+  <div class="ball"></div>
+<div class="box"></div>
+<div><h1 id="myText" style="opacity: 0;">Hello, world!</h1></div>
+
+<style>
+.ball {
+ width: 50px;
+ height: 50px;
+ background-color: red;
+ border-radius: 50%;
+ position: absolute;
+ top: 600px;
+ left: 50px;
+}
+
+.box {
+ width: 100px;
+ height: 100px;
+ background-color: blue;
+ position: absolute;
+ top: 600px;
+ left: 200px;
+}
+
+
+</style>
+
+<script>
+
+  // Fade In Animation
+function fadeIn(element, time) {
+  var opacity = 0;
+  var timer = setInterval(function() {
+    if (opacity >= 1) {
+      clearInterval(timer);
+    }
+    element.style.opacity = opacity;
+    opacity += 0.1;
+  }, time / 10);
+}
+
+// Get the text and image elements
+var myText = document.getElementById('myText');
+
+// Apply the animations
+fadeIn(myText, 2000);  // 2000 milliseconds = 2 seconds
+
+
+  // Ball animation
+let ball = document.querySelector('.ball');
+let ballStart = null;
+let ballDuration = 1000;
+
+function animateBall(timestamp) {
+ if (!ballStart) ballStart = timestamp;
+ let progress = timestamp - ballStart;
+ let y = Math.min(progress / 10, 200);
+ if (progress >= ballDuration) {
+   y = 200 - y;
+   ballStart = null;
+ }
+ ball.style.transform = `translateY(${y}px)`;
+ window.requestAnimationFrame(animateBall);
+}
+
+// Box animation
+let box = document.querySelector('.box');
+let boxStart = null;
+let boxDuration = 2000;
+
+function animateBox(timestamp) {
+ if (!boxStart) boxStart = timestamp;
+ let progress = timestamp - boxStart;
+ let x = Math.min(progress / 10, 200);
+ if (progress >= boxDuration) {
+   x = 200 - x;
+   boxStart = null;
+ }
+ box.style.transform = `translateX(${x}px)`;
+ window.requestAnimationFrame(animateBox);
+}
+
+window.requestAnimationFrame(animateBall);
+window.requestAnimationFrame(animateBox);
+window.requestAnimationFrame(fadeIn);
+
+</script>
+ </body>
+

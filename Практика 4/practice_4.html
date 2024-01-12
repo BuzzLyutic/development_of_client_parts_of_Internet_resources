@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head><!-- collection of metadata -->
+  <meta charset="UTF-8"><!-- Кодировка символов страницы -->
+  <meta name="viewport" content="width=device-width, initialscale=1.0">
+  <title>Практика 4</title><!-- заголовок -->
+  <link rel="stylesheet" href="style_prac4.css">
+  
+ </head>
+
+ <body>
+    
+
+<form method="get">
+    <fieldset>
+      <legend>Личные данные</legend>
+
+    <p>
+      <label for="name" >Имя:</label>
+      <input type="text" id="name" name="name" required>
+    </p>
+
+    <p>
+      <label for="email">Электронная почта:</label>
+      <input type="email" id="email" name="email" required>
+    </p>
+
+    <p>
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" pattern = "qwerty" required>
+    </p>
+
+    <p>
+      <label for="tel">Номер телефона:</label>
+      <input type="tel" id="tel" name="tel" placeholder="+7" required>
+    </p>
+
+    <p>
+      <label for="file">Прикрепить файл:</label>
+      <input type="file" id="file" name="file" required>
+    </p>
+
+    <p>
+      <label for="checkbox1">Флажок1:</label>
+      <input type="checkbox" id="checkbox1" name="checkbox1" checked required>
+
+      <label for="checkbox2">Флажок2:</label>
+      <input type="checkbox" id="checkbox2" name="checkbox2" checked required>
+
+      <label for="checkbox3">Флажок3:</label>
+      <input type="checkbox" id="checkbox3" name="checkbox3" checked required>
+    </p>
+
+    <p>
+        <p>Ваш пол:</p>
+      <label for="radio1">Мужской:</label>
+      <input type="radio" id="radio1" name="radio1" >
+      <label for="radio2">Женский:</label>
+      <input type="radio" id="radio2" name="radio1" >
+    </p>
+
+    <p>
+        <label for="datetime-local">Дата рождения:</label>
+        <input type="datetime-local" id="datetime-local" name="datetime-local"  min="2000-01-01T00:00" max = "2100-01-01T00:00" required>
+      </p>
+
+    <p>
+      <label for="submit">Отправить:</label>
+      <input type="submit" id="submit" name="submit" required>
+    </p>
+
+    
+
+    </fieldset>
+  
+    <fieldset>
+      <legend>Ваши предпочтения:</legend>
+      <label for="color">Любимый цвет:</label>
+      <input type="text" id="color" name="color">
+  
+      <label for="city">Ваш город:</label>
+      <select id="city" name="city" multiple size="2" required>
+        <option value="St.Petersburg">Санкт-Петербург</option>
+        <option value="Moscow">Москва</option>
+        <option value="Zanzibar">Занзибар</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+        <label for="about">
+            Расскажите о себе:
+        </label>
+        <textarea name="about" id="about" cols="35" rows="10" maxlength="500" minlength="100" placeholder="Tell about your favourite food for example :" required>
+         </textarea>
+    </fieldset>
+  
+    <button type="submit">Отправить</button>
+  </form>
+
+  <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5bb68aebdd7221dee0db2aed0bad653eddc0e29a74000bb956e1da9630d7f438&amp;source=constructor" 
+        width="744" 
+        height="524" 
+        frameborder="0">
+    </iframe>
+
+
+    <iframe width="744" 
+            height="524" 
+            src="https://www.youtube.com/embed/Hb7yYXSqqjU" 
+            title="Best of Rallye 2021 [HD]" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+    </iframe>
+
+
+</body>
